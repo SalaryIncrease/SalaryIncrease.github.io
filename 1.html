@@ -37,7 +37,7 @@
 
       <div class="center">
         <button v-on:click="pre" style="margin-right: 15%" v-on:click="next" type="button" class="btn btn-primary startbtn">上一步</button>
-        <button v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
+        <button v-on:click="next" type="button" class="btn btn-primary startbtn">{{btn}}</button>
       </div>
     </div>
     
@@ -69,6 +69,7 @@
         data:
         {
           content: operation[step],
+          btn : "下一步"
         },
         methods:
         {
@@ -87,6 +88,10 @@
             step = step + 1;
             if (step>12)  step =12;
             this.content = operation[step];
+            if (step==12)
+              this.btn = "完成"
+            else
+              this.btn = "下一步"
           },
         }
       })

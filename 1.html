@@ -87,6 +87,8 @@
           {
             step = step + 1;
             if (step>12)  step =12;
+            if (step==13)
+              window.location.href="./home.html";
             this.content = operation[step];
             if (step==12)
               this.btn = "完成"

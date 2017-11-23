@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <title>生物实验指导</title>
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="row header">
+        <div class="col-xs-2">
+          <img v-on:click="back" src="dist/img/back.png" >
+        </div>
+        <div class="col-xs-8 center">
+          <span>生物实验指导</span>
+        </div>
+      </div>
+      
+      <div class="homepic center">
+        <img class="center" style="width: 75%" src="dist/img/homepic.png">
+      </div>
+
+      <div class= "col-sm-4">
+        <select class= "form-control selectpicker">
+           <option selected="true" disabled="true"> 请选择实验</option >
+           <option> 质粒抽提</option >
+           <option> 2</option >
+           <option> 3</option >
+           <option> 4</option >
+           <option> 5</option >
+           <option> 6</option >
+        </select>
+      </div>
+      
+
+      <div class="space"></div>
+
+      <div class="center">
+        <button v-on:click="next" type="button" class="btn btn-primary startbtn">进入总览</button>
+      </div>
+    </div>
+    
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      var app=new Vue({
+        el: '#app',
+        methods:
+        {
+          next: function()
+          {
+            window.location.href="./overview.html";
+          },
+          back: function()
+          {
+            window.history.back(-1);
+          },
+        }
+      })
+    </script>
+  </body>
+</html>

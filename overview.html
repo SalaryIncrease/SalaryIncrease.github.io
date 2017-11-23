@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <title>生物实验指导</title>
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="row header">
+        <div class="col-xs-2">
+          <img v-on:click="back" src="dist/img/back.png" >
+        </div>
+        <div class="col-xs-8 center">
+          <span>生物实验指导</span>
+        </div>
+      </div>
+      
+      <div class="space"></div>
+
+      <div class="center">
+        <h1>质粒抽提实验指导</h1>
+      </div>
+      <div class="content">
+        <h4>
+          （1）用接种环挑起一个单克隆菌落放入 2ml LB 液体培养基中, 37℃摇床振荡培养 16 小时。
+        </h4>
+        <h4>
+          （2）取1.5 ml放入EP 管，12000 rpm/min 离心 15 秒。
+        </h4>
+        <h4>
+          （3）弃上清，EP 管倒立与滤纸上，吸掉液体。
+        </h4>
+        <h4>
+          （4）加入 200µl 预冷的 Solution I。置于漩涡振荡器上剧烈振荡，重悬菌体。
+        </h4>
+        <h4>
+          （5）加入 400ul 新鲜配置的 Solution II，颠倒混匀6 次。
+        </h4>
+        <h4>
+          （6）加入 300µl Solution III，颠倒混匀6 次。
+        </h4>
+        <h4>
+          （7）4℃，12,000 rpm/min，离心 10 分钟，转移上清。
+        </h4>
+        <h4>
+          （8）取上清，加入等体积的预冷酚氯仿，混匀15s, 4℃，12,000 rpm/min，离心 10 分钟。
+        </h4>
+        <h4>
+          （9）取上清置于1.5ml EP管，加2倍体积的无水乙醇沉淀DNA， 混匀！
+        </h4>
+        <h4>
+          （10）4℃，12,000 rpm/min，离心 15 分钟,去上清。
+        </h4>
+        <h4>
+          （11）75％乙醇洗涤沉淀，去除乙醇干净后，室温静置，待乙醇挥发完全。
+        </h4>
+        <h4>
+          （12）向EP 管加含 2µl 的 RNase A ddH2O 50 ul，37℃温育 30 分钟。
+        </h4>
+        <h4>
+          （13）琼脂糖凝胶电泳检测质粒质量。
+        </h4>
+      </div>
+
+      <div class="center">
+        <button v-on:click="start" type="button" class="btn btn-primary startbtn">开始实验</button>
+      </div>
+    </div>
+    
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      var app=new Vue({
+        el: '#app',
+        data:
+        {
+          
+        },
+        methods:
+        {
+          start: function()
+          {
+            window.location.href="./1.html";
+          },
+          back: function()
+          {
+            window.history.back(-1);
+          },
+        }
+      })
+    </script>
+  </body>
+</html>

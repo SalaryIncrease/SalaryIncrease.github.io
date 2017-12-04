@@ -31,13 +31,30 @@
 
       <div class="content">
         <h4>
-          {{content}}
+          （1）用接种环挑起一个单克隆菌落放入 2ml LB 液体培养基中,37℃摇床振荡培养 16 小时。"
         <h4>
       </div>
-
+      <div class="choices">
+        <div>
+          <h5>
+            选择题
+          </h5>
+        </div>
+        <div class="questions">
+          <div>  
+            <label><input type="radio" v-model="choice1" value="1"/>单菌落</label>  
+            <label><input type="radio" v-model="choice1" value="2"/>多菌落</label>  
+          </div> 
+          <div>  
+            <label><input type="radio" v-model="choice2" value="1"/>培养16小时</label>  
+            <label><input type="radio" v-model="choice2" value="2"/>培养26小时</label>  
+          </div>
+        </div> 
+      </div> 
+      <div class="space"></div>
       <div class="center">
         <button v-on:click="pre" style="margin-right: 15%" v-on:click="next" type="button" class="btn btn-primary startbtn">上一步</button>
-        <button v-on:click="next" type="button" class="btn btn-primary startbtn">{{btn}}</button>
+        <button v-bind:disabled= "!(choice1=='1' && choice2=='1')" v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
       </div>
     </div>
     
@@ -49,27 +66,12 @@
     <script src="dist/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      var step = 0;
-      var operation = new Array();
-      operation[0]="  （1）用接种环挑起一个单克隆菌落放入 2ml LB 液体培养基中, \n 37℃摇床振荡培养 16 小时。";
-      operation[1]="  （2）取1.5 ml放入EP 管，12000 rpm/min 离心 15 秒。";
-      operation[2]="  （3）弃上清，EP 管倒立与滤纸上，吸掉液体。";
-      operation[3]="  （4）加入 200µl 预冷的 Solution I。置于漩涡振荡器上剧烈振荡，重悬菌体。";
-      operation[4]="  （5）加入 400ul 新鲜配置的 Solution II，颠倒混匀6 次。";
-      operation[5]="  （6）加入 300µl Solution III，颠倒混匀6 次。";
-      operation[6]="  （7）4℃，12,000 rpm/min，离心 10 分钟，转移上清。";
-      operation[7]="  （8）取上清，加入等体积的预冷酚氯仿，混匀15s, 4℃，12,000 rpm/min，离心 10 分钟。";
-      operation[8]="  （9）取上清置于1.5ml EP管，加2倍体积的无水乙醇沉淀DNA， 混匀！";
-      operation[9]="  （10）4℃，12,000 rpm/min，离心 15 分钟,去上清。";
-      operation[10]="  （11）75％乙醇洗涤沉淀，去除乙醇干净后，室温静置，待乙醇挥发完全。";
-      operation[11]="  （12）向EP 管加含 2µl 的 RNase A ddH2O 50 ul，37℃温育 30 分钟。";
-      operation[12]="  （13）琼脂糖凝胶电泳检测质粒质量。";
       var app=new Vue({
         el: '#app',
         data:
         {
-          content: operation[step],
-          btn : "下一步"
+          choice1:'?',
+          choice2:'?',
         },
         methods:
         {
@@ -79,21 +81,11 @@
           },
           pre: function()
           {
-            step = step - 1;
-            if (step<0)  step =0;
-            this.content = operation[step];
+            window.location.href="./overview.html";
           },
           next: function()
           {
-            step = step + 1;
-            if (step>12)  step =12;
-            if (step==13)
-              window.location.href="./home.html";
-            this.content = operation[step];
-            if (step==12)
-              this.btn = "完成"
-            else
-              this.btn = "下一步"
+            window.location.href="./2.html";
           },
         }
       })

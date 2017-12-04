@@ -31,13 +31,26 @@
 
       <div class="content">
         <h4>
-          （3）  弃上清，EP 管倒立与滤纸上，吸掉液体
+          （6）加入 300µl Solution III，颠倒混匀6 次。
         <h4>
       </div>
-      
+      <div class="choices">
+        <div>
+          <h5>
+            选择题
+          </h5>
+        </div>
+        <div class="questions">
+          <div>  
+            <label><input type="radio" v-model="choice1" value="1"/>振荡混匀</label>  
+            <label><input type="radio" v-model="choice1" value="2"/>颠倒混匀</label>  
+          </div> 
+        </div> 
+      </div> 
+      <div class="space"></div>
       <div class="center">
         <button v-on:click="pre" style="margin-right: 15%" v-on:click="next" type="button" class="btn btn-primary startbtn">上一步</button>
-        <button v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
+        <button v-bind:disabled= "!(choice1=='2')" v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
       </div>
     </div>
     
@@ -53,6 +66,7 @@
         el: '#app',
         data:
         {
+          choice1:'?',
         },
         methods:
         {
@@ -62,11 +76,11 @@
           },
           pre: function()
           {
-            window.location.href="./2.html";
+            window.location.href="./5.html";
           },
           next: function()
           {
-            window.location.href="./4.html";
+            window.location.href="./7.html";
           },
         }
       })

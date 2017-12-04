@@ -31,13 +31,30 @@
 
       <div class="content">
         <h4>
-          （3）  弃上清，EP 管倒立与滤纸上，吸掉液体
+          （7）12,000 rpm/min，离心 10 分钟，转移上清。
         <h4>
       </div>
-      
+      <div class="choices">
+        <div>
+          <h5>
+            选择题
+          </h5>
+        </div>
+        <div class="questions">
+          <div>  
+            <label><input type="radio" v-model="choice1" value="1"/>8000 rpm/min</label>  
+            <label><input type="radio" v-model="choice1" value="2"/>12000 rpm/min</label>  
+          </div> 
+          <div>  
+            <label><input type="radio" v-model="choice2" value="1"/>10 分钟</label>  
+            <label><input type="radio" v-model="choice2" value="2"/>1 分钟</label>  
+          </div>
+        </div> 
+      </div> 
+      <div class="space"></div>
       <div class="center">
         <button v-on:click="pre" style="margin-right: 15%" v-on:click="next" type="button" class="btn btn-primary startbtn">上一步</button>
-        <button v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
+        <button v-bind:disabled= "!(choice1=='2' && choice2=='1')" v-on:click="next" type="button" class="btn btn-primary startbtn">下一步</button>
       </div>
     </div>
     
@@ -53,6 +70,8 @@
         el: '#app',
         data:
         {
+          choice1:'?',
+          choice2:'?',
         },
         methods:
         {
@@ -62,11 +81,11 @@
           },
           pre: function()
           {
-            window.location.href="./2.html";
+            window.location.href="./6.html";
           },
           next: function()
           {
-            window.location.href="./4.html";
+            window.location.href="./8.html";
           },
         }
       })
